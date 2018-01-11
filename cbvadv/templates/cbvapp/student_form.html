@@ -1,0 +1,11 @@
+{%extends 'base.html'%}
+{% block body_block %}
+<h2>creating student page</h2>
+
+<form  method="post">
+  {% csrf_token%}
+  {{ form.as_p }}
+
+  <input type="submit" class='btn btn-prim' name="" value="submit">
+</form>
+{% endblock %}

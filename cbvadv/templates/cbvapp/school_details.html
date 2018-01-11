@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{%  block body_block%}
+  <h2>school details : </h2>
+
+  <h4> {{ school_details.name }} </h4>
+  <h4> {{ school_details.principal }} </h4>
+  <h4> {{ school_details.location }} </h4>
+
+  <h2>student details : </h2>
+
+  {%  for students in school_details.students.all %}
+    <h3>{{ students.name }}</h3>
+    <h3>{{ students.age }}</h3>
+  {%  endfor %}
+
+
+  <div class="container">
+    <p> <a class='btn btn-warning' href="{% url 'cbvapp:update' pk=school_details.pk %}">update</a> </p>
+  </div>
+{% endblock %}

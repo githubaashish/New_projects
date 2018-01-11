@@ -1,0 +1,13 @@
+{%  extends 'base.html' %}
+{% block body_block %}
+
+<h3>Delete {{ school.name }} ?</h3>
+<form  method="post">
+
+  {% csrf_token %}
+  <input class='btn btn-prim' type="submit" name="" value="Delete">
+  <a href="{% url 'cbvapp:list' %}">cancel</a>
+</form>
+
+
+{% endblock %}

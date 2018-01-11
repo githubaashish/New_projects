@@ -1,0 +1,21 @@
+{%  extends 'base.html'%}
+
+{%  block body_block %}
+
+<h2>school page Info loaded</h2>
+<h3>if the school is not there , create or else update</h3>
+
+{% if not form.instance.pk %}
+create School
+{% else %}
+update school
+{%  endif %}
+
+<form  method="post">
+
+  {%  csrf_token%}
+  {{  form.as_p }}
+  <input type="submit" class="btn btn-prim" name="" value="submit">
+
+</form>
+{%  endblock %}
